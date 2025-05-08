@@ -1,6 +1,16 @@
-from database import UserFetchFormat,connect_to_localDB
+import os
+from database import UserFetchFormat,connect_to_localDB,connect_to_rds
 from typing import Union, Dict
 from langchain.agents import tool
+from typing import TypedDict, List, Optional, Dict, Any
+from langchain_core.messages import AIMessage, ToolMessage, BaseMessage, SystemMessage, HumanMessage
+from langchain.agents import tool
+from langgraph.graph import StateGraph, END
+from google.colab import userdata
+from database import connect_to_localDB, UserFetchFormat
+from langchain_groq import ChatGroq
+from dotenv import load_dotenv
+import os
 @tool
 def check_user(phone:str) -> Union[Dict[str, any], str]:
     """ Fetch User info (name,phone,email,address,city,state,zipcode),
@@ -37,4 +47,3 @@ def check_user(phone:str) -> Union[Dict[str, any], str]:
         return result.model_dump()
     else:
         return "No User"
-    
