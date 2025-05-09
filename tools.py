@@ -1,5 +1,5 @@
 import os
-from database import UserFetchFormat,connect_to_localDB,connect_to_rds
+from mkrad_bot.database import UserFetchFormat,connect_to_localDB,connect_to_rds
 from typing import Union, Dict
 from langchain.agents import tool
 from typing import TypedDict, List, Optional, Dict, Any
@@ -7,7 +7,6 @@ from langchain_core.messages import AIMessage, ToolMessage, BaseMessage, SystemM
 from langchain.agents import tool
 from langgraph.graph import StateGraph, END
 from google.colab import userdata
-from database import connect_to_localDB, UserFetchFormat
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 import os
