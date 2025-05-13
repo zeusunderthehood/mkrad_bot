@@ -8,6 +8,7 @@ FIELDS_TO_COLLECT = [
     ("pincode", "What is your area pincode?")
 ]
 
+
 dialogs=("Hi, Welcome to MKRAD Landscaping services. Would you like to book a service with us?"
                 "\n\n"
                 "User: Yes \n\n"
@@ -64,4 +65,6 @@ system_prompt = (
     "- Be polite, clear, and efficient.\n\n"
 
     "Use this example for tone and flow:\n\n"
+    "Please answers question realted to booking dont answer unrelated question? Simply say I don't have any information on that"
     f"{dialogs}"
+)
